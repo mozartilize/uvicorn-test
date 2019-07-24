@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Test uvicorn</title>
+</head>
+
+<body>
+  <h1>New todo</h1>
+  {% if error %}
+  <h4 style="color: red;">{{ error }}</h4>
+  {% endif %}
+  <form action="{% url 'todo-new' %}" method="POST">
+    {% csrf_token %}
+    <label for="id_content">Content</label></br>
+    <textarea id="id_content" name="content"></textarea></br>
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>
