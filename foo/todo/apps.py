@@ -2,7 +2,7 @@ from django.apps import AppConfig
 
 
 class TodoConfig(AppConfig):
-    name = 'todo'
+    name = 'foo.todo'
 
     def ready(self):
-        import todo.signals
+        import foo.todo.signals

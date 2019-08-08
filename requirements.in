@@ -1,0 +1,7 @@
+django
+uvicorn
+wsproto
+channels
+gunicorn
+psycopg2-binary
+-e /home/mozart/Documents/github/django-postgrespool2

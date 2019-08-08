@@ -1,9 +1,14 @@
 from channels.generic.websocket import AsyncWebsocketConsumer
 from channels.db import database_sync_to_async
+from django.db import connection as db
 from .models import Todo
 
 
 class TodoConsumer(AsyncWebsocketConsumer):
+    async def accept(self, subprotocol=None):
+        await super().accept(subprotocol)
+        # db.dispose()
+
     async def connect(self):
         await self.accept()
         self.group_name = 'todos'

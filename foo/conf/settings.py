@@ -32,7 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'channels',
-    'todo',
+    'foo.todo',
 ]
 
 MIDDLEWARE = [
@@ -43,7 +43,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'foo.urls'
+ROOT_URLCONF = 'foo.conf.urls'
 
 TEMPLATES = [
     {
@@ -66,7 +66,7 @@ CHANNEL_LAYERS = {
 }
 
 WSGI_APPLICATION = 'foo.wsgi.application'
-ASGI_APPLICATION = 'foo.routing.application'
+ASGI_APPLICATION = 'foo.conf.routing.application'
 
 
 # Database
@@ -74,8 +74,13 @@ ASGI_APPLICATION = 'foo.routing.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django_postgrespool2',
+        'NAME': 'uvicorn_test',
+        'USER': 'atom',
+        'PASSWORD': 'atom',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
+        # 'CONN_MAX_AGE': 300,
     }
 }
 

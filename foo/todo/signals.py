@@ -7,6 +7,7 @@ from wsproto.events import (
     Message,
     Request,
     TextMessage,
+    Ping,
 )
 from django.db.models.signals import post_save
 from django.dispatch import receiver
@@ -41,6 +42,8 @@ def handle_events(ws: WSConnection) -> None:
             print("WebSocket negotiation complete")
         elif isinstance(event, TextMessage):
             print("Received message: {}".format(event.data))
+        elif isinstance(event, Ping):
+            print("Received ping: {}".format(event))
         else:
             raise Exception("Do not know how to handle event: " + str(event))
 
