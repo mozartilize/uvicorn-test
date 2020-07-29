@@ -28,7 +28,7 @@ sqlparse==0.3.0
 Twisted==19.2.1
 txaio==18.8.1
 urllib3==1.25.3
-uvicorn==0.8.4
+uvicorn==0.11.7
 uvloop==0.12.2
 websockets==7.0
 wsproto==0.14.1
