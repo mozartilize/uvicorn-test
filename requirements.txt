@@ -11,7 +11,7 @@ Click==7.0
 constantly==15.1.0
 cryptography==2.7
 daphne==2.3.0
-Django==2.2.3
+Django==2.2.20
 h11==0.8.1
 httptools==0.0.13
 hyperlink==19.0.0
