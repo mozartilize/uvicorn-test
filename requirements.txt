@@ -30,6 +30,6 @@ txaio==18.8.1
 urllib3==1.25.3
 uvicorn==0.8.4
 uvloop==0.12.2
-websockets==7.0
+websockets==9.1
 wsproto==0.14.1
 zope.interface==4.6.0
